@@ -22,7 +22,7 @@ export default class ClienteDAO{
         
         if (cliente instanceof Cliente){
             const conexao = await conectar();
-            const sql="UPDATE clientes SET nome=?, endereco = ?,bairro = ?, \
+            const sql="UPDATE cliente SET nome=?, endereco = ?,bairro = ?, \
                                       cidade = ?, estado = ?,telefone = ?, email = ? \
                        WHERE cpf=?";
             const valores = [cliente.nome,cliente.endereco, 
@@ -36,7 +36,7 @@ export default class ClienteDAO{
 
         if (cliente instanceof Cliente){
             const conexao = await conectar();
-            const sql="DELETE FROM clientes WHERE cpf=?";
+            const sql="DELETE FROM cliente WHERE cpf=?";
             const valores = [cliente.cpf];                                        
             await conexao.query(sql,valores);
         } 
@@ -45,7 +45,7 @@ export default class ClienteDAO{
 
     async consultar(termo){
         const conexao = await conectar();
-        const sql = "SELECT * FROM clientes WHERE nome LIKE ?";
+        const sql = "SELECT * FROM cliente WHERE nome LIKE ?";
         const valores = ['%' + termo + '%']
         const [rows] = await conexao.query(sql, valores);
         const listaClientes = [];
@@ -60,7 +60,7 @@ export default class ClienteDAO{
 
     async consultarCPF(cpf){
         const conexao = await conectar();
-        const sql = "SELECT * FROM clientes WHERE cpf = ?";
+        const sql = "SELECT * FROM cliente WHERE cpf = ?";
         const valores = [cpf]
         const [rows] = await conexao.query(sql, valores);
         const listaClientes = [];
