@@ -1,11 +1,11 @@
 import { Button, Container, Table } from "react-bootstrap";
-import { useState } from "react";
-
+// import { useState } from "react";
+import './TabelaItensVenda.css'
 export default function TabelaItensVenda(props) {
     var totalVendas = 0;
     return (
-        <Container className="m-3 border">
-            <Table striped bordered hover variant="dark">
+        <Container id="teste">
+            <Table striped bordered hover variant="info">
                 <thead>
                     <tr>
                         <th>Código do livro</th>

@@ -52,7 +52,7 @@ export default class PedidoDao {
             } catch (error) {
                 //voltar o banco de dados ao estado anterior
                 await conexao.rollback();
-                throw error; // Re-throw the error for further handling
+                throw error;
             }
         }
     }

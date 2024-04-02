@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Form, Row, Col, Button, Container } from 'react-bootstrap';
+import { Form, Row, Col, Button, Container, } from 'react-bootstrap';
+import { BagPlusFill } from 'react-bootstrap-icons';
 import BarraBusca from "../meusComponentes/busca/BarraBusca";
 import CaixaSelecao from "../meusComponentes/busca/CaixaSelecao";
 import TabelaItensVenda from "../tabelas/TabelaItensVenda";
@@ -125,9 +126,12 @@ export default function FormCadVenda(props) {
     };
 
     return (
-        <div id="teste">
+        <Container className="border p-4">
+            <h2>Cadastro de Venda <BagPlusFill id="icone" size={26} color="black"/></h2>
         <Form noValidate validated={validado} onSubmit={manipulaSubmissao}>
+            <Container id="container1">
             <Row className="mb-3">
+                {/* <h2>Cadastro de Venda <BagPlusFill id="icone" size={26} color="black"/></h2> */}
                 <Form.Group as={Col} md="4" controlId="idVenda">
                     <Form.Label>Pedido nº</Form.Label>
                     <Form.Control
@@ -182,12 +186,14 @@ export default function FormCadVenda(props) {
                         valor={""} />
                 </Form.Group>
             </Row>
+            </Container>
+            <h3 id="titulo2">Itens da Venda</h3>
             <Row>
                 {
                     //Seção resposável por permitir que produtos sejam selecionados para a venda
                     //Demonstração de relacionamento muitos para muitos
                 }
-                <Container className="m-3 border">
+                <Container id="container2">
                     <Row className="m-3">
                         <Col md={2}>
                             <Form.Label>Selecione um livro</Form.Label>
@@ -200,6 +206,7 @@ export default function FormCadVenda(props) {
                                 localLista={'listaLivros'} />
                         </Col>
                     </Row>
+
                     <Row>
                         {
                             //Seção ficará responsável por detalhar o produto selecionado
@@ -208,8 +215,8 @@ export default function FormCadVenda(props) {
                             <Row>
                                 <Col md={1}>
                                     <Form.Group>
-                                        <Form.Label>Código:</Form.Label>
-                                        <Form.Control type="text" value={produtoSelecionado?.codigo} disabled />
+                                        <Form.Label style={{ marginLeft: '10px' }}>Código:</Form.Label>
+                                        <Form.Control style={{ marginLeft: '10px' }} type="text" value={produtoSelecionado?.codigo} disabled />
                                     </Form.Group>
                                 </Col>
                                 <Col md={4}>
@@ -250,7 +257,7 @@ export default function FormCadVenda(props) {
                                 <Col md={1} className="middle">
                                     <Form.Group>
                                         <Form.Label>Adicionar</Form.Label>
-                                        <Button onClick={() => {
+                                        <Button id="btn1" onClick={() => {
                                             //adicionar o item na lista de itens vendidos
                                             if (qtdItem > 0) {
                                                 setVenda({
@@ -281,7 +288,7 @@ export default function FormCadVenda(props) {
                         </Col>
                     </Row>
                     <Row className="mt-3">
-                        <p><strong>Lista de livros escolhidos</strong></p>
+                        <h5 id="titulo3">Lista de livros escolhidos</h5>
                         <TabelaItensVenda
                             listaItens={venda.itens}
                             setVenda={setVenda}
@@ -289,8 +296,9 @@ export default function FormCadVenda(props) {
                     </Row>
                 </Container>
             </Row>
-            <Button type="submit">Confirmar a Venda</Button>
+            <Button type="submit" className="btn btn-success">Confirmar a Venda</Button>
         </Form>
-        </div>
+        </Container>
     );
 }
+

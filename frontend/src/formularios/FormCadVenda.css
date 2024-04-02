@@ -1,4 +1,76 @@
-#teste{
-    margin-top: 40px;
-    margin-bottom: 20px;
+.border {
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Aplica um desfoque ao fundo */
+    background-color: rgba(255, 255, 255, 0.5); /* Define uma cor de fundo semitransparente */
+}
+
+.border {
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: color(rec2020 0.4 0.69 0.89 / 0.5);
+}
+
+#container1{
+    padding-bottom: 20px;
+    background-color: rgb(231, 232, 233);
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Adiciona uma borda sólida preta de 2 pixels */
+    border-radius: 10px; /* Adiciona bordas arredondadas com um raio de 10 pixels */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao redor do contêiner */
+}
+
+#container2 {
+    background-color: rgb(231, 232, 233);
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Adiciona uma borda sólida preta de 2 pixels */
+    border-radius: 10px; /* Adiciona bordas arredondadas com um raio de 10 pixels */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao redor do contêiner */
+}
+
+
+#div1{
+    margin-top: 10px;
+}
+
+#icone{
+    margin-top: -6px;
+}
+
+#btn1{
+    margin-left: 10px;
+}
+
+.btn-success {
+    margin-top: 1em;
+    margin-left: -12px; /* Usando uma unidade relativa */
+    padding: 0.5em 1em; /* Adicionando um preenchimento para tornar o botão mais espaçado */
+    font-size: 1em; /* Usando uma unidade relativa para o tamanho da fonte */
+}
+
+
+h2 {
+    text-align: center; /* Centraliza o texto */
+    max-width: 100%; /* Torna o elemento responsivo */
+    margin: 0 auto; /* Adiciona margem automática para centralizar horizontalmente */
+}
+
+#titulo2{
+    text-align: center;
+    max-width: 100%;
+    margin: 10px 0 auto; 
+}
+
+#titulo3{
+    text-align: center;
+    max-width: 100%;
+    margin: 10px 0 auto; 
+}
+
+
+
+/* Exemplo de ajuste do botão para telas menores usando uma media query */
+@media screen and (max-width: 600px) {
+    .btn-success {
+        margin-left: 0; /* Remove a margem esquerda em telas menores */
+        width: 100%; /* Define a largura do botão para 100% da largura do contêiner pai */
+    }
 }
